@@ -46,7 +46,7 @@ namespace BankingManagementSystem
         {
             string dev1 = "Md. Nabil Adibur Rahman - ID: 23-53187-3";
             string dev2 = "Maisha Tahseen - ID: 23-53206-3";
-            string dev3 = "Rafi - ID: 103";
+            string dev3 = "Shanjida Ahmed Shema - ID: 23-53378-3";
 
             string message = dev1 + "\n" + dev2 + "\n" + dev3;
 
@@ -59,7 +59,7 @@ namespace BankingManagementSystem
             if (txtUserId.Text == "admin" && txtPass.Text == "admin")
             {
                 string loginTimestamp = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
-                CustomerHomeForm hf = new CustomerHomeForm(loginTimestamp);
+                CustomerHomeForm hf = new CustomerHomeForm();
                 hf.Show();
                 this.Hide();
             }
@@ -79,6 +79,16 @@ namespace BankingManagementSystem
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

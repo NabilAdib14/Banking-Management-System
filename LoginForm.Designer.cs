@@ -39,7 +39,7 @@
             this.btnAbout = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSignUp = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblShowPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -153,13 +153,14 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(168, 339);
+            this.label5.Location = new System.Drawing.Point(163, 367);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(312, 37);
+            this.label5.Size = new System.Drawing.Size(328, 32);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Don\'t have an account?";
+            this.label5.Text = "New Customer Registration";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnSignUp
             // 
@@ -167,7 +168,7 @@
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.Color.Black;
-            this.btnSignUp.Location = new System.Drawing.Point(486, 343);
+            this.btnSignUp.Location = new System.Drawing.Point(497, 367);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(89, 38);
             this.btnSignUp.TabIndex = 10;
@@ -175,17 +176,17 @@
             this.btnSignUp.UseVisualStyleBackColor = false;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
-            // label6
+            // lblShowPassword
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(434, 247);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Show password";
-            this.label6.MouseEnter += new System.EventHandler(this.label6_MouseEnter);
-            this.label6.MouseLeave += new System.EventHandler(this.label6_MouseLeave);
+            this.lblShowPassword.AutoSize = true;
+            this.lblShowPassword.BackColor = System.Drawing.Color.White;
+            this.lblShowPassword.Location = new System.Drawing.Point(434, 247);
+            this.lblShowPassword.Name = "lblShowPassword";
+            this.lblShowPassword.Size = new System.Drawing.Size(82, 13);
+            this.lblShowPassword.TabIndex = 12;
+            this.lblShowPassword.Text = "Show password";
+            this.lblShowPassword.MouseEnter += new System.EventHandler(this.label6_MouseEnter);
+            this.lblShowPassword.MouseLeave += new System.EventHandler(this.label6_MouseLeave);
             // 
             // LoginForm
             // 
@@ -193,7 +194,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblShowPassword);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnAbout);
@@ -205,10 +206,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +230,6 @@
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSignUp;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblShowPassword;
     }
 }
