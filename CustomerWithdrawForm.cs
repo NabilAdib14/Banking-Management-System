@@ -20,18 +20,20 @@ namespace BankingManagementSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            CustomerAccountForm customerAccountForm = new CustomerAccountForm();
-            customerAccountForm.Show();
-            this.Hide();
         }
 
         private void CustomerWithdrawForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are you sure you want to Cancel?", "Exit", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Are you sure you want to Cancel?", "Cancel", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.No)
             {
                 e.Cancel = true;
+            }
+            else
+            {
+                CustomerAccountForm customerAccountForm = new CustomerAccountForm();
+                customerAccountForm.Show();
             }
         }
     }

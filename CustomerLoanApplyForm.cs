@@ -10,36 +10,31 @@ using System.Windows.Forms;
 
 namespace BankingManagementSystem
 {
-    public partial class CustomerDepositForm : Form
+    public partial class CustomerLoanApplyForm : Form
     {
-        public CustomerDepositForm()
+        public CustomerLoanApplyForm()
         {
             InitializeComponent();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CustomerDepositForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void CustomerLoanApplyForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dr = MessageBox.Show("Are you sure you want to Cancel?", "Cancel", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.No)
             {
-                e.Cancel = true;
+                e.Cancel = true; 
             }
             else
             {
-                CustomerAccountForm customerAccountForm = new CustomerAccountForm();
-                customerAccountForm.Show();
+                CustomerLoanForm customerLoanForm = new CustomerLoanForm();
+                customerLoanForm.Show();
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
