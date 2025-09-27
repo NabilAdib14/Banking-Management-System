@@ -104,5 +104,26 @@ namespace BankingManagementSystem
         {
             Application.Exit();
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            CustomerSettings1Form customerSettings1Form = new CustomerSettings1Form();
+            customerSettings1Form.Show();
+            this.Hide();
+        }
+
+        private void btnUpdateProfile_Click_1(object sender, EventArgs e)
+        {
+            CustomerSettings1Form customerSettings1Form = new CustomerSettings1Form();
+            customerSettings1Form.Show();
+            this.Hide();
+        }
+
+        private void btnChangePassword_Click_1(object sender, EventArgs e)
+        {
+            CustomerSettings2Form customerSettings2Form = new CustomerSettings2Form();
+            customerSettings2Form.Show();
+            this.Hide();
+        }
     }
 }

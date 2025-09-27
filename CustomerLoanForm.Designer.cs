@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label9 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnLoan = new System.Windows.Forms.Button();
@@ -35,15 +36,36 @@
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblLoginTime = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnLoanApply = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pnlCard = new System.Windows.Forms.Panel();
             this.lblBalance = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblAccName = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.pnlCard.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(40, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(274, 37);
+            this.label9.TabIndex = 56;
+            this.label9.Text = "Welcome, Customer";
             // 
             // btnLogout
             // 
@@ -51,10 +73,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Location = new System.Drawing.Point(653, 88);
+            this.btnLogout.Location = new System.Drawing.Point(659, 71);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(96, 45);
-            this.btnLogout.TabIndex = 59;
+            this.btnLogout.TabIndex = 63;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -65,10 +87,10 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
-            this.btnSettings.Location = new System.Drawing.Point(551, 88);
+            this.btnSettings.Location = new System.Drawing.Point(557, 71);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(96, 45);
-            this.btnSettings.TabIndex = 58;
+            this.btnSettings.TabIndex = 62;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
@@ -79,7 +101,7 @@
             this.btnLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoan.ForeColor = System.Drawing.Color.Black;
-            this.btnLoan.Location = new System.Drawing.Point(449, 88);
+            this.btnLoan.Location = new System.Drawing.Point(455, 71);
             this.btnLoan.Name = "btnLoan";
             this.btnLoan.Size = new System.Drawing.Size(96, 45);
             this.btnLoan.TabIndex = 1;
@@ -93,10 +115,10 @@
             this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransfer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransfer.ForeColor = System.Drawing.Color.Black;
-            this.btnTransfer.Location = new System.Drawing.Point(347, 88);
+            this.btnTransfer.Location = new System.Drawing.Point(353, 71);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(96, 45);
-            this.btnTransfer.TabIndex = 56;
+            this.btnTransfer.TabIndex = 60;
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = false;
             this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
@@ -107,10 +129,10 @@
             this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistory.ForeColor = System.Drawing.Color.Black;
-            this.btnHistory.Location = new System.Drawing.Point(245, 88);
+            this.btnHistory.Location = new System.Drawing.Point(251, 71);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(96, 45);
-            this.btnHistory.TabIndex = 55;
+            this.btnHistory.TabIndex = 59;
             this.btnHistory.Text = "History";
             this.btnHistory.UseVisualStyleBackColor = false;
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
@@ -121,10 +143,10 @@
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.Color.Black;
-            this.btnAccount.Location = new System.Drawing.Point(143, 88);
+            this.btnAccount.Location = new System.Drawing.Point(149, 71);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(96, 45);
-            this.btnAccount.TabIndex = 54;
+            this.btnAccount.TabIndex = 58;
             this.btnAccount.Text = "Account";
             this.btnAccount.UseVisualStyleBackColor = false;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
@@ -135,25 +157,91 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
-            this.btnHome.Location = new System.Drawing.Point(41, 88);
+            this.btnHome.Location = new System.Drawing.Point(47, 71);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(96, 45);
-            this.btnHome.TabIndex = 53;
+            this.btnHome.TabIndex = 57;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // label9
+            // label1
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(34, 35);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(150, 37);
-            this.label9.TabIndex = 52;
-            this.label9.Text = "Welcome, ";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(515, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 21);
+            this.label1.TabIndex = 55;
+            // 
+            // lblLoginTime
+            // 
+            this.lblLoginTime.AutoSize = true;
+            this.lblLoginTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginTime.ForeColor = System.Drawing.Color.White;
+            this.lblLoginTime.Location = new System.Drawing.Point(506, 0);
+            this.lblLoginTime.Name = "lblLoginTime";
+            this.lblLoginTime.Size = new System.Drawing.Size(0, 21);
+            this.lblLoginTime.TabIndex = 64;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.TabIndex = 65;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Controls.Add(this.btnSettings);
+            this.panel1.Controls.Add(this.btnLoan);
+            this.panel1.Controls.Add(this.btnTransfer);
+            this.panel1.Controls.Add(this.btnHistory);
+            this.panel1.Controls.Add(this.btnAccount);
+            this.panel1.Controls.Add(this.btnHome);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(794, 134);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnLoanApply);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 143);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(794, 44);
+            this.panel2.TabIndex = 1;
+            // 
+            // btnLoanApply
+            // 
+            this.btnLoanApply.BackColor = System.Drawing.Color.Gold;
+            this.btnLoanApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoanApply.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoanApply.Location = new System.Drawing.Point(195, 5);
+            this.btnLoanApply.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLoanApply.Name = "btnLoanApply";
+            this.btnLoanApply.Size = new System.Drawing.Size(71, 37);
+            this.btnLoanApply.TabIndex = 74;
+            this.btnLoanApply.Text = "Apply";
+            this.btnLoanApply.UseVisualStyleBackColor = false;
+            this.btnLoanApply.Click += new System.EventHandler(this.btnLoanApply_Click);
             // 
             // label2
             // 
@@ -161,35 +249,31 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(44, 154);
+            this.label2.Location = new System.Drawing.Point(9, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(181, 30);
-            this.label2.TabIndex = 60;
+            this.label2.TabIndex = 73;
             this.label2.Text = "Loan Application";
             // 
-            // btnLoanApply
+            // panel3
             // 
-            this.btnLoanApply.BackColor = System.Drawing.Color.Gold;
-            this.btnLoanApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoanApply.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoanApply.Location = new System.Drawing.Point(230, 153);
-            this.btnLoanApply.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLoanApply.Name = "btnLoanApply";
-            this.btnLoanApply.Size = new System.Drawing.Size(71, 37);
-            this.btnLoanApply.TabIndex = 61;
-            this.btnLoanApply.Text = "Apply";
-            this.btnLoanApply.UseVisualStyleBackColor = false;
+            this.panel3.Controls.Add(this.pnlCard);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 193);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(794, 254);
+            this.panel3.TabIndex = 2;
             // 
             // pnlCard
             // 
             this.pnlCard.BackColor = System.Drawing.Color.White;
             this.pnlCard.Controls.Add(this.lblBalance);
-            this.pnlCard.Controls.Add(this.label1);
+            this.pnlCard.Controls.Add(this.label3);
             this.pnlCard.Controls.Add(this.lblAccName);
-            this.pnlCard.Location = new System.Drawing.Point(237, 244);
+            this.pnlCard.Location = new System.Drawing.Point(243, 69);
             this.pnlCard.Name = "pnlCard";
             this.pnlCard.Size = new System.Drawing.Size(308, 116);
-            this.pnlCard.TabIndex = 62;
+            this.pnlCard.TabIndex = 74;
             // 
             // lblBalance
             // 
@@ -203,17 +287,17 @@
             this.lblBalance.TabIndex = 38;
             this.lblBalance.Text = "Amount:";
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(13, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 21);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "[n/r/p/a] date:";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(13, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 21);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "[n/r/p/a] date:";
             // 
             // lblAccName
             // 
@@ -233,23 +317,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pnlCard);
-            this.Controls.Add(this.btnLoanApply);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnSettings);
-            this.Controls.Add(this.btnLoan);
-            this.Controls.Add(this.btnTransfer);
-            this.Controls.Add(this.btnHistory);
-            this.Controls.Add(this.btnAccount);
-            this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblLoginTime);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.Name = "CustomerLoanForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerLoanForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerLoanForm_FormClosing);
             this.Load += new System.EventHandler(this.CustomerLoanForm_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.pnlCard.ResumeLayout(false);
             this.pnlCard.PerformLayout();
             this.ResumeLayout(false);
@@ -259,6 +340,7 @@
 
         #endregion
 
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnLoan;
@@ -266,12 +348,17 @@
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLoginTime;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnLoanApply;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlCard;
         private System.Windows.Forms.Label lblBalance;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblAccName;
     }
 }

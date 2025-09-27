@@ -79,5 +79,12 @@ namespace BankingManagementSystem
         {
             Application.Exit();
         }
+
+        private void btnLoanApply_Click(object sender, EventArgs e)
+        {
+            CustomerLoanApplyForm customerLoanApplyForm = new CustomerLoanApplyForm();
+            customerLoanApplyForm.Show();
+            this.Hide();
+        }
     }
 }

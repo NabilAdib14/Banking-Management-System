@@ -56,10 +56,22 @@ namespace BankingManagementSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUserId.Text == "admin" && txtPass.Text == "admin")
+            if (txtUserId.Text == "customer" && txtPass.Text == "customer")
             {
                 string loginTimestamp = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
                 CustomerHomeForm hf = new CustomerHomeForm();
+                hf.Show();
+                this.Hide();
+            }
+            else if (txtUserId.Text == "employee" && txtPass.Text == "employee")
+            {
+                EmployeeHomeForm hf = new EmployeeHomeForm();
+                hf.Show();
+                this.Hide();
+            }
+            else if (txtUserId.Text == "admin" && txtPass.Text == "admin")
+            {
+                AdminHomeForm hf = new AdminHomeForm();
                 hf.Show();
                 this.Hide();
             }

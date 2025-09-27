@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminCustomerForm.Designer.cs">
+      <DependentUpon>AdminCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminEmployeeForm.Designer.cs">
+      <DependentUpon>AdminEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminHomeForm.Designer.cs">
+      <DependentUpon>AdminHomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLoanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLoanForm.Designer.cs">
+      <DependentUpon>AdminLoanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTransactionForm.Designer.cs">
+      <DependentUpon>AdminTransactionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationHelper.cs" />
     <Compile Include="CustomerAccountForm.cs">
       <SubType>Form</SubType>
@@ -70,6 +100,12 @@
     </Compile>
     <Compile Include="CustomerHomeForm.Designer.cs">
       <DependentUpon>CustomerHomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerLoanApplyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerLoanApplyForm.Designer.cs">
+      <DependentUpon>CustomerLoanApplyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerLoanForm.cs">
       <SubType>Form</SubType>
@@ -101,6 +137,36 @@
     <Compile Include="CustomerWithdrawForm.Designer.cs">
       <DependentUpon>CustomerWithdrawForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeCustomerForm.Designer.cs">
+      <DependentUpon>EmployeeCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeHomeForm.Designer.cs">
+      <DependentUpon>EmployeeHomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeLoanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeLoanForm.Designer.cs">
+      <DependentUpon>EmployeeLoanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSettings1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeSettings1Form.Designer.cs">
+      <DependentUpon>EmployeeSettings1Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSettings2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeSettings2Form.Designer.cs">
+      <DependentUpon>EmployeeSettings2Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +181,21 @@
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminCustomerForm.resx">
+      <DependentUpon>AdminCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEmployeeForm.resx">
+      <DependentUpon>AdminEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminHomeForm.resx">
+      <DependentUpon>AdminHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLoanForm.resx">
+      <DependentUpon>AdminLoanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTransactionForm.resx">
+      <DependentUpon>AdminTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerAccountForm.resx">
       <DependentUpon>CustomerAccountForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerHomeForm.resx">
       <DependentUpon>CustomerHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerLoanApplyForm.resx">
+      <DependentUpon>CustomerLoanApplyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerLoanForm.resx">
       <DependentUpon>CustomerLoanForm.cs</DependentUpon>
@@ -141,6 +225,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerWithdrawForm.resx">
       <DependentUpon>CustomerWithdrawForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeCustomerForm.resx">
+      <DependentUpon>EmployeeCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeHomeForm.resx">
+      <DependentUpon>EmployeeHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeLoanForm.resx">
+      <DependentUpon>EmployeeLoanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSettings1Form.resx">
+      <DependentUpon>EmployeeSettings1Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSettings2Form.resx">
+      <DependentUpon>EmployeeSettings2Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

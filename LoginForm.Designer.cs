@@ -109,7 +109,6 @@
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.Size = new System.Drawing.Size(169, 29);
             this.txtUserId.TabIndex = 5;
-            this.txtUserId.Text = "admin";
             // 
             // txtPass
             // 
@@ -118,7 +117,6 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(169, 29);
             this.txtPass.TabIndex = 6;
-            this.txtPass.Text = "admin";
             this.txtPass.UseSystemPasswordChar = true;
             // 
             // btnLogin
