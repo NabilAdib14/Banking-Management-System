@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -70,6 +71,54 @@ namespace BankingManagementSystem
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void AdminHomeForm_Load(object sender, EventArgs e)
+        {
+            namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
+            int customers=0, employees = 0, loans = 0, transactions = 0;
+            try
+            {
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+
+                cmd.CommandText = $"select count(*) as 'count' from Customer";
+                DataTable dt = new DataTable();
+                var adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+                customers = Convert.ToInt32(dt.Rows[0]["count"].ToString());
+
+                cmd.CommandText = $"select count(*) as 'count' from Employee";
+                DataTable dt1 = new DataTable();
+                var adp1 = new SqlDataAdapter(cmd);
+                adp1.Fill(dt1);
+                employees = Convert.ToInt32(dt1.Rows[0]["count"].ToString());
+
+                cmd.CommandText = $"select count(*) as 'count' from LoanStatus";
+                DataTable dt2 = new DataTable();
+                var adp2 = new SqlDataAdapter(cmd);
+                adp2.Fill(dt2);
+                loans = Convert.ToInt32(dt2.Rows[0]["count"].ToString());
+
+                cmd.CommandText = $"select count(*) as 'count' from TransactionInfo where T_Date = CAST(GETDATE() as date)";
+                DataTable dt3 = new DataTable();
+                var adp3 = new SqlDataAdapter(cmd);
+                adp3.Fill(dt3);
+                transactions = Convert.ToInt32(dt3.Rows[0]["count"].ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            lblTotalCustomer.Text = $"Total Customers: {customers}";
+            lblTotalEmployee.Text = $"Total Employees: {employees}";
+            lblTotalLoan.Text = $"Total Loans: {loans}";
+            lblTransactions.Text = $"Today's Transactions: {transactions}";
 
         }
     }

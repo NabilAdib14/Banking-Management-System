@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,7 +48,26 @@ namespace BankingManagementSystem
 
         private void CustomerHomeForm_Load(object sender, EventArgs e)
         {
+            namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
 
+            string conPath = ApplicationHelper.ConnectionPath;
+            var con = new SqlConnection();
+            con.ConnectionString = conPath;
+            con.Open();
+            var cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = $"select A_CardNo from Account where A_Id = {ApplicationHelper.LoggedInId}";
+            DataTable dt = new DataTable();
+            var adp = new SqlDataAdapter(cmd);
+            adp.Fill(dt);
+            lblCardno.Text= dt.Rows[0]["A_CardNo"].ToString();
+
+            cmd.CommandText = $"select A_Validity from Account where A_Id = {ApplicationHelper.LoggedInId}";
+            DataTable dt1 = new DataTable();
+            var adp1 = new SqlDataAdapter(cmd);
+            adp1.Fill(dt1);
+            con.Close();
+            lblValidity.Text = "Validity: "+Convert.ToDateTime(dt1.Rows[0]["A_Validity"]).ToString("MM/dd/yyyy");
         }
 
         private void button14_Click(object sender, EventArgs e)

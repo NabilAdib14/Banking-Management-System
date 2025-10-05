@@ -67,5 +67,10 @@ namespace BankingManagementSystem
                 this.Hide();
             }
         }
+
+        private void AdminEmployeeForm_Load(object sender, EventArgs e)
+        {
+            namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
+        }
     }
 }

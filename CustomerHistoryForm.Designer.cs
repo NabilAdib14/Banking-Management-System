@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label9 = new System.Windows.Forms.Label();
+            this.namelbl = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnLoan = new System.Windows.Forms.Button();
@@ -40,6 +40,12 @@
             this.lblLoginTime = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dGVHistory = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,17 +55,17 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label9
+            // namelbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(40, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(274, 37);
-            this.label9.TabIndex = 56;
-            this.label9.Text = "Welcome, Customer";
+            this.namelbl.AutoSize = true;
+            this.namelbl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.namelbl.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namelbl.ForeColor = System.Drawing.Color.White;
+            this.namelbl.Location = new System.Drawing.Point(40, 18);
+            this.namelbl.Name = "namelbl";
+            this.namelbl.Size = new System.Drawing.Size(274, 37);
+            this.namelbl.TabIndex = 56;
+            this.namelbl.Text = "Welcome, Customer";
             // 
             // btnLogout
             // 
@@ -202,16 +208,80 @@
             this.dGVHistory.AllowUserToAddRows = false;
             this.dGVHistory.AllowUserToDeleteRows = false;
             this.dGVHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column1});
             this.dGVHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGVHistory.Location = new System.Drawing.Point(3, 173);
             this.dGVHistory.Name = "dGVHistory";
             this.dGVHistory.ReadOnly = true;
+            this.dGVHistory.RowHeadersWidth = 51;
+            this.dGVHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVHistory.Size = new System.Drawing.Size(794, 274);
             this.dGVHistory.TabIndex = 2;
+            this.dGVHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVHistory_CellContentClick);
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column2.DataPropertyName = "T_Date";
+            this.Column2.HeaderText = "Date";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "T_Amount";
+            this.Column3.HeaderText = "Amount";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "T_Type";
+            this.Column4.HeaderText = "Transaction Type";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "From_A_Id";
+            this.Column5.HeaderText = "From Account";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 150;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "To_A_Id";
+            this.Column6.HeaderText = "To Account";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 150;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "T_Method";
+            this.Column1.HeaderText = "Transaction Method";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.namelbl);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnSettings);
             this.panel1.Controls.Add(this.btnLoan);
@@ -260,6 +330,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerHistoryForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerHistoryForm_FormClosing);
+            this.Load += new System.EventHandler(this.CustomerHistoryForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGVHistory)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -273,7 +344,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label namelbl;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnLoan;
@@ -288,5 +359,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

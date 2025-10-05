@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -84,5 +85,69 @@ namespace BankingManagementSystem
         {
             Application.Exit();
     }
+
+        private void CustomerTransferForm_Load(object sender, EventArgs e)
+        {
+            namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
+            txtF_Acc_No.Text = Convert.ToString(ApplicationHelper.LoggedInId);
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int toA_Id = Convert.ToInt32(txtTo_Acc_No.Text);
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"SELECT * FROM Account WHERE A_Id = {toA_Id}";
+                DataTable dt = new DataTable();
+                var adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+                if (dt.Rows.Count != 1)
+                {
+                    MessageBox.Show("Invalid Receiver Account.");
+                    return;
+                }
+                cmd.CommandText = $"select * FROM Account WHERE A_Id = {ApplicationHelper.LoggedInId}";
+                DataTable dt1 = new DataTable();
+                var adp1 = new SqlDataAdapter(cmd);
+                adp1.Fill(dt1);
+                double balance = Convert.ToDouble(dt.Rows[0]["A_Balance"].ToString());
+                double amount;
+                if (double.TryParse(txtAmount.Text, out amount))
+                {
+                    if (amount <= 0)
+                    {
+                        MessageBox.Show("Amount must be greater than 0.");
+                        return;
+                    }
+                    if (amount > balance)
+                    {
+                        MessageBox.Show("Amount must be less than available balance.");
+                        return;
+                    }
+                    cmd.CommandText = $"update Account set A_Balance = A_Balance -{amount} where A_Id = {ApplicationHelper.LoggedInId}";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = $"update Account set A_Balance = A_Balance +{amount} where A_Id = {toA_Id}";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = $"insert into TransactionInfo (T_Amount,T_Type,T_Date,From_A_Id,To_A_Id,T_Method) values ({amount},'Transfer','{DateTime.Now}',{ApplicationHelper.LoggedInId},{toA_Id},'Transfer')";
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show($"{amount}Tk transferred to Account No.{toA_Id} successfully!");
+                    txtTo_Acc_No.Clear();
+                    txtAmount.Clear();
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
     }
 }

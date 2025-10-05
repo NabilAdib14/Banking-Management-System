@@ -19,7 +19,7 @@ namespace BankingManagementSystem
 
         private void EmployeeCustomerForm_Load(object sender, EventArgs e)
         {
-
+            namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
         }
 
         private void EmployeeCustomerForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label9 = new System.Windows.Forms.Label();
+            this.namelbl = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnLoan = new System.Windows.Forms.Button();
@@ -48,6 +48,7 @@
             this.lblBalance = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblAccName = new System.Windows.Forms.Label();
+            this.btnRepay = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,17 +56,17 @@
             this.pnlCard.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label9
+            // namelbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(40, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(274, 37);
-            this.label9.TabIndex = 56;
-            this.label9.Text = "Welcome, Customer";
+            this.namelbl.AutoSize = true;
+            this.namelbl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.namelbl.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namelbl.ForeColor = System.Drawing.Color.White;
+            this.namelbl.Location = new System.Drawing.Point(40, 18);
+            this.namelbl.Name = "namelbl";
+            this.namelbl.Size = new System.Drawing.Size(274, 37);
+            this.namelbl.TabIndex = 56;
+            this.namelbl.Text = "Welcome, Customer";
             // 
             // btnLogout
             // 
@@ -204,7 +205,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.namelbl);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnSettings);
             this.panel1.Controls.Add(this.btnLoan);
@@ -235,7 +236,7 @@
             this.btnLoanApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoanApply.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoanApply.Location = new System.Drawing.Point(195, 5);
-            this.btnLoanApply.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLoanApply.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLoanApply.Name = "btnLoanApply";
             this.btnLoanApply.Size = new System.Drawing.Size(71, 37);
             this.btnLoanApply.TabIndex = 74;
@@ -257,6 +258,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnRepay);
             this.panel3.Controls.Add(this.pnlCard);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 193);
@@ -311,6 +313,20 @@
             this.lblAccName.TabIndex = 35;
             this.lblAccName.Text = "Loan Status: [n/r/p/a]";
             // 
+            // btnRepay
+            // 
+            this.btnRepay.BackColor = System.Drawing.Color.Gold;
+            this.btnRepay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRepay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepay.Location = new System.Drawing.Point(353, 190);
+            this.btnRepay.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRepay.Name = "btnRepay";
+            this.btnRepay.Size = new System.Drawing.Size(71, 37);
+            this.btnRepay.TabIndex = 75;
+            this.btnRepay.Text = "Repay";
+            this.btnRepay.UseVisualStyleBackColor = false;
+            this.btnRepay.Click += new System.EventHandler(this.btnRepay_Click);
+            // 
             // CustomerLoanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,7 +356,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label namelbl;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnLoan;
@@ -360,5 +376,6 @@
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblAccName;
+        private System.Windows.Forms.Button btnRepay;
     }
 }

@@ -72,7 +72,7 @@ namespace BankingManagementSystem
 
         private void CustomerLoanForm_Load(object sender, EventArgs e)
         {
-        
+            namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
         }
 
         private void CustomerLoanForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -85,6 +85,23 @@ namespace BankingManagementSystem
             CustomerLoanApplyForm customerLoanApplyForm = new CustomerLoanApplyForm();
             customerLoanApplyForm.Show();
             this.Hide();
+        }
+
+        private void btnRepay_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+            "Are you sure you want to repay the loan?","Confirm Repayment",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                //if (balance >= loanAmount)
+                //{
+                //    MessageBox.Show("Loan repaid successfully!");
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Insufficient balance to repay loan.");
+                //}
+            }
         }
     }
 }

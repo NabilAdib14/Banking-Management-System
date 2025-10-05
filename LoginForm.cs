@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -56,28 +57,54 @@ namespace BankingManagementSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUserId.Text == "customer" && txtPass.Text == "customer")
+            int id = int.Parse(txtUserId.Text);
+            string pwd = txtPass.Text;
+            try
             {
-                string loginTimestamp = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
-                CustomerHomeForm hf = new CustomerHomeForm();
-                hf.Show();
-                this.Hide();
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"SELECT * FROM UserInfo WHERE U_Id = {id} AND U_Password = '{pwd}'";
+                DataTable dt = new DataTable();
+                var adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+                con.Close();
+
+                if (dt.Rows.Count != 1)
+                {
+                    MessageBox.Show("Invalid User ID or Password.");
+                    return;
+                }
+
+                ApplicationHelper.LoggedInName = dt.Rows[0]["U_Name"].ToString();
+                ApplicationHelper.LoggedInType = dt.Rows[0]["U_Role"].ToString();
+                ApplicationHelper.LoggedInId = id;
+                if (ApplicationHelper.LoggedInType == "Customer")
+                {
+                    string loginTimestamp = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
+                    CustomerHomeForm hf = new CustomerHomeForm();
+                    hf.Show();
+                    this.Hide();
+                }
+                else if (ApplicationHelper.LoggedInType == "Employee")
+                {
+                    EmployeeHomeForm ehf = new EmployeeHomeForm();
+                    ehf.Show();
+                    this.Hide();
+                }
+                else if (ApplicationHelper.LoggedInType == "Manager")
+                {
+                    AdminHomeForm ahf = new AdminHomeForm();
+                    ahf.Show();
+                    this.Hide();
+                }
             }
-            else if (txtUserId.Text == "employee" && txtPass.Text == "employee")
+            catch (Exception ex)
             {
-                EmployeeHomeForm hf = new EmployeeHomeForm();
-                hf.Show();
-                this.Hide();
-            }
-            else if (txtUserId.Text == "admin" && txtPass.Text == "admin")
-            {
-                AdminHomeForm hf = new AdminHomeForm();
-                hf.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password");
+                MessageBox.Show(ex.Message);
             }
         }
 

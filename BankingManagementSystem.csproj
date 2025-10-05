@@ -155,6 +155,12 @@
     <Compile Include="EmployeeLoanForm.Designer.cs">
       <DependentUpon>EmployeeLoanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeLoanStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeLoanStatusForm.Designer.cs">
+      <DependentUpon>EmployeeLoanStatusForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeSettings1Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeLoanForm.resx">
       <DependentUpon>EmployeeLoanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeLoanStatusForm.resx">
+      <DependentUpon>EmployeeLoanStatusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeSettings1Form.resx">
       <DependentUpon>EmployeeSettings1Form.cs</DependentUpon>

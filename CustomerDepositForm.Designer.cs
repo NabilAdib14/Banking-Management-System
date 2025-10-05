@@ -40,9 +40,10 @@
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(106, 39);
+            this.txtAmount.Location = new System.Drawing.Point(141, 48);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(169, 29);
+            this.txtAmount.Size = new System.Drawing.Size(224, 34);
             this.txtAmount.TabIndex = 7;
             // 
             // lblAmount
@@ -51,9 +52,10 @@
             this.lblAmount.BackColor = System.Drawing.Color.White;
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmount.ForeColor = System.Drawing.Color.Black;
-            this.lblAmount.Location = new System.Drawing.Point(24, 42);
+            this.lblAmount.Location = new System.Drawing.Point(32, 52);
+            this.lblAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(76, 21);
+            this.lblAmount.Size = new System.Drawing.Size(93, 28);
             this.lblAmount.TabIndex = 6;
             this.lblAmount.Text = "Amount:";
             // 
@@ -63,9 +65,10 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(26, 77);
+            this.label1.Location = new System.Drawing.Point(35, 95);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 21);
+            this.label1.Size = new System.Drawing.Size(91, 28);
             this.label1.TabIndex = 8;
             this.label1.Text = "Method:";
             // 
@@ -75,11 +78,11 @@
             this.cmbMethod.FormattingEnabled = true;
             this.cmbMethod.Items.AddRange(new object[] {
             "Cash",
-            "Cheque",
-            "Online Transfer"});
-            this.cmbMethod.Location = new System.Drawing.Point(105, 76);
+            "Cheque"});
+            this.cmbMethod.Location = new System.Drawing.Point(140, 94);
+            this.cmbMethod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbMethod.Name = "cmbMethod";
-            this.cmbMethod.Size = new System.Drawing.Size(170, 28);
+            this.cmbMethod.Size = new System.Drawing.Size(225, 33);
             this.cmbMethod.TabIndex = 9;
             // 
             // btnConfirm
@@ -87,10 +90,10 @@
             this.btnConfirm.BackColor = System.Drawing.Color.Gold;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(43, 133);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfirm.Location = new System.Drawing.Point(57, 164);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(105, 41);
+            this.btnConfirm.Size = new System.Drawing.Size(140, 50);
             this.btnConfirm.TabIndex = 48;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -101,10 +104,10 @@
             this.btnCancel.BackColor = System.Drawing.Color.Gold;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(152, 133);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Location = new System.Drawing.Point(203, 164);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(105, 41);
+            this.btnCancel.Size = new System.Drawing.Size(140, 50);
             this.btnCancel.TabIndex = 47;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -113,17 +116,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(12, 24);
+            this.panel1.Location = new System.Drawing.Point(16, 30);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 95);
+            this.panel1.Size = new System.Drawing.Size(377, 117);
             this.panel1.TabIndex = 49;
             // 
             // CustomerDepositForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(307, 199);
+            this.ClientSize = new System.Drawing.Size(409, 245);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.btnConfirm);
@@ -131,6 +135,7 @@
             this.Controls.Add(this.cmbMethod);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "CustomerDepositForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

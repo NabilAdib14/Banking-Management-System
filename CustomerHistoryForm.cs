@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -78,6 +79,41 @@ namespace BankingManagementSystem
         private void CustomerHistoryForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void CustomerHistoryForm_Load(object sender, EventArgs e)
+        {
+            namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
+            try
+            {
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"select * from TransactionInfo where From_A_Id = {ApplicationHelper.LoggedInId} or To_A_Id = {ApplicationHelper.LoggedInId}";
+                DataTable dt = new DataTable();
+                var adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+                dGVHistory.AutoGenerateColumns = false;
+                dGVHistory.DataSource = dt;
+                dGVHistory.Refresh();
+                dGVHistory.ClearSelection();
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void dGVHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

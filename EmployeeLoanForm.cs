@@ -65,5 +65,39 @@ namespace BankingManagementSystem
                 this.Hide();
             }
         }
+
+        private void btnLoanStatus_Click(object sender, EventArgs e)
+        {
+            EmployeeLoanStatusForm employeeLoanStatusForm = new EmployeeLoanStatusForm();
+            employeeLoanStatusForm.Show();
+            this.Hide();
+        }
+
+        private void EmployeeLoanForm_Load(object sender, EventArgs e)
+        {
+            namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

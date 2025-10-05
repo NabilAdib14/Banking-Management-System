@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,7 @@ namespace BankingManagementSystem
 
         private void AdminTransactionForm_Load(object sender, EventArgs e)
         {
-
+            namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
         }
 
         private void AdminTransactionForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -91,6 +92,50 @@ namespace BankingManagementSystem
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BtnView_Click(object sender, EventArgs e)
+        {
+            DateTime start = dTPFromDate.Value;
+            DateTime end = dTPToDate.Value;
+            if (start > end)
+            {
+                dGVTransaction.DataSource = null;
+                dGVTransaction.Rows.Clear();
+                MessageBox.Show("Invalid Date Range");
+                return;
+            }
+            try
+            {
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"select * from TransactionInfo where T_Date between '{start}' and '{end}'";
+                DataTable dt = new DataTable();
+                var adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+                con.Close();
+                if (dt.Rows.Count < 1)
+                {
+                    dGVTransaction.DataSource = null;
+                    dGVTransaction.Rows.Clear();
+                    MessageBox.Show("No Available Transaction History!");
+                    return;
+                }
+                dGVTransaction.AutoGenerateColumns = false;
+                dGVTransaction.DataSource = dt;
+                dGVTransaction.Refresh();
+                dGVTransaction.ClearSelection();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
