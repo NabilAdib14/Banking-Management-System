@@ -32,10 +32,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panelUpdateProfile = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnUpdateProfile = new System.Windows.Forms.Button();
@@ -61,10 +59,9 @@
             this.pnlCustomerView.Controls.Add(this.btnChangePassword);
             this.pnlCustomerView.Controls.Add(this.btnUpdateProfile);
             this.pnlCustomerView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCustomerView.Location = new System.Drawing.Point(4, 189);
-            this.pnlCustomerView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlCustomerView.Location = new System.Drawing.Point(3, 153);
             this.pnlCustomerView.Name = "pnlCustomerView";
-            this.pnlCustomerView.Size = new System.Drawing.Size(1059, 361);
+            this.pnlCustomerView.Size = new System.Drawing.Size(794, 294);
             this.pnlCustomerView.TabIndex = 1;
             // 
             // btnUpdate
@@ -72,83 +69,65 @@
             this.btnUpdate.BackColor = System.Drawing.Color.Gold;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(651, 254);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(486, 204);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(109, 50);
+            this.btnUpdate.Size = new System.Drawing.Size(82, 41);
             this.btnUpdate.TabIndex = 75;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panelUpdateProfile
             // 
             this.panelUpdateProfile.BackColor = System.Drawing.Color.White;
             this.panelUpdateProfile.Controls.Add(this.txtEmail);
-            this.panelUpdateProfile.Controls.Add(this.txtAddress);
             this.panelUpdateProfile.Controls.Add(this.txtName);
             this.panelUpdateProfile.Controls.Add(this.lblEmail);
-            this.panelUpdateProfile.Controls.Add(this.lblAddress);
             this.panelUpdateProfile.Controls.Add(this.lblName);
-            this.panelUpdateProfile.Location = new System.Drawing.Point(479, 58);
-            this.panelUpdateProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelUpdateProfile.Location = new System.Drawing.Point(370, 74);
+            this.panelUpdateProfile.Margin = new System.Windows.Forms.Padding(2);
             this.panelUpdateProfile.Name = "panelUpdateProfile";
-            this.panelUpdateProfile.Size = new System.Drawing.Size(428, 191);
+            this.panelUpdateProfile.Size = new System.Drawing.Size(321, 107);
             this.panelUpdateProfile.TabIndex = 74;
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(139, 123);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmail.Location = new System.Drawing.Point(101, 62);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(264, 34);
-            this.txtEmail.TabIndex = 7;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(139, 74);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(264, 34);
-            this.txtAddress.TabIndex = 5;
+            this.txtEmail.Size = new System.Drawing.Size(199, 29);
+            this.txtEmail.TabIndex = 5;
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(139, 25);
-            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtName.Location = new System.Drawing.Point(101, 16);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(264, 34);
+            this.txtName.Size = new System.Drawing.Size(199, 29);
             this.txtName.TabIndex = 4;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(45, 127);
+            this.lblEmail.Location = new System.Drawing.Point(31, 64);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(69, 28);
+            this.lblEmail.Size = new System.Drawing.Size(57, 21);
             this.lblEmail.TabIndex = 3;
             this.lblEmail.Text = "Email:";
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(23, 78);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(92, 28);
-            this.lblAddress.TabIndex = 1;
-            this.lblAddress.Text = "Address:";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(41, 28);
+            this.lblName.Location = new System.Drawing.Point(28, 19);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(73, 28);
+            this.lblName.Size = new System.Drawing.Size(60, 21);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name:";
             // 
@@ -157,10 +136,10 @@
             this.btnChangePassword.BackColor = System.Drawing.Color.Gold;
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePassword.Location = new System.Drawing.Point(152, 158);
-            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChangePassword.Location = new System.Drawing.Point(80, 137);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(249, 50);
+            this.btnChangePassword.Size = new System.Drawing.Size(187, 41);
             this.btnChangePassword.TabIndex = 73;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = false;
@@ -171,10 +150,10 @@
             this.btnUpdateProfile.BackColor = System.Drawing.Color.Gold;
             this.btnUpdateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateProfile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateProfile.Location = new System.Drawing.Point(152, 91);
-            this.btnUpdateProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(80, 83);
+            this.btnUpdateProfile.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(249, 50);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(187, 41);
             this.btnUpdateProfile.TabIndex = 72;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = false;
@@ -183,17 +162,16 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 187F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
             this.tableLayoutPanel1.Controls.Add(this.pnlButtons, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pnlCustomerView, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 554);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // pnlButtons
@@ -206,10 +184,9 @@
             this.pnlButtons.Controls.Add(this.btnDashboard);
             this.pnlButtons.Controls.Add(this.lblLoginTime);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButtons.Location = new System.Drawing.Point(4, 4);
-            this.pnlButtons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlButtons.Location = new System.Drawing.Point(3, 3);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(1059, 177);
+            this.pnlButtons.Size = new System.Drawing.Size(794, 144);
             this.pnlButtons.TabIndex = 0;
             // 
             // namelbl
@@ -218,10 +195,9 @@
             this.namelbl.BackColor = System.Drawing.Color.RoyalBlue;
             this.namelbl.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.namelbl.ForeColor = System.Drawing.Color.White;
-            this.namelbl.Location = new System.Drawing.Point(79, 49);
-            this.namelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.namelbl.Location = new System.Drawing.Point(59, 40);
             this.namelbl.Name = "namelbl";
-            this.namelbl.Size = new System.Drawing.Size(349, 46);
+            this.namelbl.Size = new System.Drawing.Size(283, 37);
             this.namelbl.TabIndex = 63;
             this.namelbl.Text = "Welcome,  Employee";
             // 
@@ -231,10 +207,9 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Location = new System.Drawing.Point(821, 114);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Location = new System.Drawing.Point(616, 93);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(160, 55);
+            this.btnLogout.Size = new System.Drawing.Size(120, 45);
             this.btnLogout.TabIndex = 68;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -246,10 +221,9 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
-            this.btnSettings.Location = new System.Drawing.Point(648, 114);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSettings.Location = new System.Drawing.Point(486, 93);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(160, 55);
+            this.btnSettings.Size = new System.Drawing.Size(120, 45);
             this.btnSettings.TabIndex = 1;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
@@ -261,10 +235,9 @@
             this.btnLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoan.ForeColor = System.Drawing.Color.Black;
-            this.btnLoan.Location = new System.Drawing.Point(475, 114);
-            this.btnLoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoan.Location = new System.Drawing.Point(356, 93);
             this.btnLoan.Name = "btnLoan";
-            this.btnLoan.Size = new System.Drawing.Size(160, 55);
+            this.btnLoan.Size = new System.Drawing.Size(120, 45);
             this.btnLoan.TabIndex = 66;
             this.btnLoan.Text = "Loan";
             this.btnLoan.UseVisualStyleBackColor = false;
@@ -276,10 +249,9 @@
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomer.ForeColor = System.Drawing.Color.Black;
-            this.btnCustomer.Location = new System.Drawing.Point(301, 114);
-            this.btnCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCustomer.Location = new System.Drawing.Point(226, 93);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(160, 55);
+            this.btnCustomer.Size = new System.Drawing.Size(120, 45);
             this.btnCustomer.TabIndex = 62;
             this.btnCustomer.Text = "Customers";
             this.btnCustomer.UseVisualStyleBackColor = false;
@@ -291,10 +263,9 @@
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.Black;
-            this.btnDashboard.Location = new System.Drawing.Point(128, 114);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDashboard.Location = new System.Drawing.Point(96, 93);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(160, 55);
+            this.btnDashboard.Size = new System.Drawing.Size(120, 45);
             this.btnDashboard.TabIndex = 65;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
@@ -305,20 +276,18 @@
             this.lblLoginTime.AutoSize = true;
             this.lblLoginTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginTime.ForeColor = System.Drawing.Color.White;
-            this.lblLoginTime.Location = new System.Drawing.Point(696, 9);
-            this.lblLoginTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLoginTime.Location = new System.Drawing.Point(522, 7);
             this.lblLoginTime.Name = "lblLoginTime";
-            this.lblLoginTime.Size = new System.Drawing.Size(0, 28);
+            this.lblLoginTime.Size = new System.Drawing.Size(0, 21);
             this.lblLoginTime.TabIndex = 64;
             // 
             // EmployeeSettings1Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "EmployeeSettings1Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -350,10 +319,8 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panelUpdateProfile;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnUpdateProfile;

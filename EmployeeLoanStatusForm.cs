@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -64,76 +65,115 @@ namespace BankingManagementSystem
         private void EmployeeLoanStatusForm_Load(object sender, EventArgs e)
         {
             namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
+            this.LoadData();
         }
 
+        private void LoadData()
+        {
+            try
+            {
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"select * from LoanStatus order by LS_Id desc";
+                DataTable dt = new DataTable();
+                var adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+                dGVLoanStatus.AutoGenerateColumns = false;
+                dGVLoanStatus.DataSource = dt;
+                dGVLoanStatus.Refresh();
+                dGVLoanStatus.ClearSelection();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtLoanId.Text))
+            {
+                MessageBox.Show("No Loan Status Selected");
+                return;
+            }
+
+            try
+            {
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection(conPath);
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+
+                cmd.CommandText = $"select LS_Status from LoanStatus where LS_Id = {txtLoanId.Text}";
+                string currentStatus = cmd.ExecuteScalar().ToString();
+                if (currentStatus == "Approved" || currentStatus == "Rejected" || currentStatus == "Repaid")
+                {
+                    MessageBox.Show($"Loan is already {currentStatus}.");
+                    con.Close();
+                    return;
+                }
+
+                cmd.CommandText = $"update LoanStatus set LS_Status = '{cmbStatus.Text}', EM_Id = {ApplicationHelper.LoggedInId} where LS_Id ={txtLoanId.Text}";
+                cmd.ExecuteNonQuery();
+
+
+                if (cmbStatus.Text == "Approved")
+                {
+                    cmd.CommandText = $"update LoanStatus set LS_DisbursementDate = GETDATE() where LS_Id = {txtLoanId.Text}";
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = $"select A_Id,LS_Amount from LoanStatus LS, Loan L where LS.LS_Id = {txtLoanId.Text} and L.L_Id = LS.L_Id";
+                    DataTable dt = new DataTable();
+                    var adp = new SqlDataAdapter(cmd);
+                    adp.Fill(dt);
+
+                    int aid = Convert.ToInt32(dt.Rows[0]["A_Id"]);
+                    double amount = Convert.ToDouble(dt.Rows[0]["LS_Amount"]);
+
+                    cmd.CommandText = $"update Account set A_Balance = A_Balance + {amount} where A_Id = {aid}";
+                    cmd.ExecuteNonQuery();
+                }
+                txtLoanId.Text = "";
+                cmbStatus.Text = "";
+                this.LoadData();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLoanId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void namelbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblLoginTime_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void EmployeeLoanStatusForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dGVLoanStatus_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtLoanId.Text = dGVLoanStatus.Rows[e.RowIndex].Cells[0].Value.ToString();
+            cmbStatus.Text = dGVLoanStatus.Rows[e.RowIndex].Cells[2].Value.ToString();
+            if(cmbStatus.Text == "Pending")
+            {
+                cmbStatus.Enabled = true;
+            }
+            else
+            {
+                cmbStatus.Enabled = false;
+            }
+        }
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

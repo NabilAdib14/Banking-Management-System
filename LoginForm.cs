@@ -57,55 +57,86 @@ namespace BankingManagementSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtUserId.Text);
-            string pwd = txtPass.Text;
-            try
-            {
-                string conPath = ApplicationHelper.ConnectionPath;
-                var con = new SqlConnection();
-                con.ConnectionString = conPath;
-                con.Open();
-                var cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = $"SELECT * FROM UserInfo WHERE U_Id = {id} AND U_Password = '{pwd}'";
-                DataTable dt = new DataTable();
-                var adp = new SqlDataAdapter(cmd);
-                adp.Fill(dt);
-                con.Close();
 
-                if (dt.Rows.Count != 1)
+            int id;            
+            string pwd = txtPass.Text;
+            
+            if(int.TryParse(txtUserId.Text, out id))
+            {
+                if (string.IsNullOrEmpty(pwd))
                 {
-                    MessageBox.Show("Invalid User ID or Password.");
+                    MessageBox.Show("Password is required");
                     return;
                 }
+                try
+                {
+                    string conPath = ApplicationHelper.ConnectionPath;
+                    var con = new SqlConnection();
+                    con.ConnectionString = conPath;
+                    con.Open();
+                    var cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    cmd.CommandText = $"SELECT * FROM UserInfo  WHERE U_Id = {id} AND U_Password = '{pwd}'";
+                    DataTable dt = new DataTable();
+                    var adp = new SqlDataAdapter(cmd);
+                    adp.Fill(dt);
+                    con.Close();
 
-                ApplicationHelper.LoggedInName = dt.Rows[0]["U_Name"].ToString();
-                ApplicationHelper.LoggedInType = dt.Rows[0]["U_Role"].ToString();
-                ApplicationHelper.LoggedInId = id;
-                if (ApplicationHelper.LoggedInType == "Customer")
-                {
-                    string loginTimestamp = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt");
-                    CustomerHomeForm hf = new CustomerHomeForm();
-                    hf.Show();
-                    this.Hide();
+                    if (dt.Rows.Count != 1)
+                    {
+                        MessageBox.Show("Invalid User ID or Password.");
+                        return;
+                    }
+
+                    ApplicationHelper.LoggedInName = dt.Rows[0]["U_Name"].ToString();
+                    ApplicationHelper.LoggedInType = dt.Rows[0]["U_Role"].ToString();
+                    ApplicationHelper.LoggedInId = id;
+                    if (ApplicationHelper.LoggedInType == "Customer")
+                    {
+                        var con1 = new SqlConnection();
+                        con1.ConnectionString = conPath;
+                        con1.Open();
+                        var cmd1 = new SqlCommand();
+                        cmd1.Connection = con1;
+                        cmd1.CommandText = $"SELECT * FROM Customer WHERE C_Id = {id}";
+                        DataTable dt1 = new DataTable();
+                        var adp1 = new SqlDataAdapter(cmd1);
+                        adp1.Fill(dt1);
+                        con1.Close();
+                        string active = dt1.Rows[0]["C_Active"].ToString();
+
+                        if (active.ToLower() == "false")
+                        {
+                            MessageBox.Show("User is no longer a customer");
+                            return;
+                        }
+                        CustomerHomeForm hf = new CustomerHomeForm();
+                        hf.Show();
+                        this.Hide();
+                    }
+                    else if (ApplicationHelper.LoggedInType == "Employee")
+                    {
+                        EmployeeHomeForm ehf = new EmployeeHomeForm();
+                        ehf.Show();
+                        this.Hide();
+                    }
+                    else if (ApplicationHelper.LoggedInType == "Manager")
+                    {
+                        AdminHomeForm ahf = new AdminHomeForm();
+                        ahf.Show();
+                        this.Hide();
+                    }
                 }
-                else if (ApplicationHelper.LoggedInType == "Employee")
+                catch (Exception ex)
                 {
-                    EmployeeHomeForm ehf = new EmployeeHomeForm();
-                    ehf.Show();
-                    this.Hide();
-                }
-                else if (ApplicationHelper.LoggedInType == "Manager")
-                {
-                    AdminHomeForm ahf = new AdminHomeForm();
-                    ahf.Show();
-                    this.Hide();
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Enter valid User ID");
             }
+            
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)

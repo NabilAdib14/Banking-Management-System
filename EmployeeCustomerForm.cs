@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace BankingManagementSystem
         private void EmployeeCustomerForm_Load(object sender, EventArgs e)
         {
             namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
+            this.LoadData();
+
         }
 
         private void EmployeeCustomerForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -64,6 +67,36 @@ namespace BankingManagementSystem
                 loginForm.Show();
                 this.Hide();
             }
+        }
+        private void LoadData()
+        {
+            try
+            {
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"select * from UserInfo, Customer where U_Id = C_Id and C_Active = 1";
+                DataTable dt = new DataTable();
+                var adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+                dGVCustomer.AutoGenerateColumns = false;
+                dGVCustomer.DataSource = dt;
+                dGVCustomer.Refresh();
+                dGVCustomer.ClearSelection();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

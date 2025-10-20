@@ -101,7 +101,17 @@ namespace BankingManagementSystem
             DateTime dob = dtp_DOB.Value;
             DateTime openingDate = DateTime.Now;
             DateTime validTill = openingDate.AddYears(5);
-            int U_Id=0;
+            int U_Id = 0;
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(pwd) || string.IsNullOrEmpty(address) || string.IsNullOrEmpty(mail))
+            {
+                MessageBox.Show("Fill all the required details");
+                return;
+            }
+            if(dob == DateTime.MinValue || dob >= DateTime.Today.AddYears(-18))
+            {
+                MessageBox.Show("Enter valid Date of Birth \nUser must be at least 18 years old");
+                return;
+            }
             try
             {
                 string conPath = ApplicationHelper.ConnectionPath;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -78,6 +79,50 @@ namespace BankingManagementSystem
             EmployeeSettings1Form employeeSettings1Form1 = new EmployeeSettings1Form();
             employeeSettings1Form1.Show();
             this.Hide();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"select * from UserInfo where U_Id = {ApplicationHelper.LoggedInId}";
+                DataTable dt = new DataTable();
+                var adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+                string oldpwd = dt.Rows[0]["U_Password"].ToString();
+                if (txtOldPassword.Text.ToString() != oldpwd)
+                {
+                    MessageBox.Show("Incorrect Current Password");
+                    return;
+                }
+                string newpwd = txtNewPassword.Text.ToString();
+                cmd.CommandText = $"update UserInfo set U_Password = {newpwd} where U_Id = {ApplicationHelper.LoggedInId}";
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Password Updated Successfully!");
+                txtOldPassword.Clear();
+                txtNewPassword.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtBox_MouseEnter(object sender, EventArgs e)
+        {
+            TextBox txtbox = (TextBox)sender;
+            txtbox.UseSystemPasswordChar = false;
+        }
+        private void txtBox_MouseLeave(object sender, EventArgs e)
+        {
+            TextBox txtbox = (TextBox)sender;
+            txtbox.UseSystemPasswordChar = true;
         }
     }
 }

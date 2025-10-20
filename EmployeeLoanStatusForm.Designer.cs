@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.txtLoanId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.namelbl = new System.Windows.Forms.Label();
@@ -46,6 +46,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblLoginTime = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVLoanStatus)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -53,31 +60,29 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmbStatus
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Approve",
-            "Reject",
-            "Pending"});
-            this.comboBox1.Location = new System.Drawing.Point(28, 148);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(271, 40);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Approved",
+            "Rejected"});
+            this.cmbStatus.Location = new System.Drawing.Point(28, 148);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(271, 40);
+            this.cmbStatus.TabIndex = 3;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // txtLoanId
             // 
             this.txtLoanId.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoanId.Location = new System.Drawing.Point(28, 60);
-            this.txtLoanId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLoanId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLoanId.Name = "txtLoanId";
             this.txtLoanId.ReadOnly = true;
             this.txtLoanId.Size = new System.Drawing.Size(271, 39);
             this.txtLoanId.TabIndex = 2;
-            this.txtLoanId.TextChanged += new System.EventHandler(this.txtLoanId_TextChanged);
             // 
             // label2
             // 
@@ -90,7 +95,6 @@
             this.label2.Size = new System.Drawing.Size(109, 32);
             this.label2.TabIndex = 0;
             this.label2.Text = "Loan ID:";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // namelbl
             // 
@@ -104,7 +108,6 @@
             this.namelbl.Size = new System.Drawing.Size(349, 46);
             this.namelbl.TabIndex = 54;
             this.namelbl.Text = "Welcome,  Employee";
-            this.namelbl.Click += new System.EventHandler(this.namelbl_Click);
             // 
             // btnLogout
             // 
@@ -113,7 +116,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
             this.btnLogout.Location = new System.Drawing.Point(796, 106);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(160, 55);
             this.btnLogout.TabIndex = 59;
@@ -128,7 +131,7 @@
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
             this.btnSettings.Location = new System.Drawing.Point(623, 106);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(160, 55);
             this.btnSettings.TabIndex = 58;
@@ -143,7 +146,7 @@
             this.btnLoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoan.ForeColor = System.Drawing.Color.Black;
             this.btnLoan.Location = new System.Drawing.Point(449, 106);
-            this.btnLoan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLoan.Name = "btnLoan";
             this.btnLoan.Size = new System.Drawing.Size(160, 55);
             this.btnLoan.TabIndex = 1;
@@ -158,7 +161,7 @@
             this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomer.ForeColor = System.Drawing.Color.Black;
             this.btnCustomer.Location = new System.Drawing.Point(276, 106);
-            this.btnCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(160, 55);
             this.btnCustomer.TabIndex = 53;
@@ -173,7 +176,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Location = new System.Drawing.Point(121, 208);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(105, 47);
             this.btnSave.TabIndex = 60;
@@ -186,30 +189,38 @@
             this.dGVLoanStatus.AllowUserToAddRows = false;
             this.dGVLoanStatus.AllowUserToDeleteRows = false;
             this.dGVLoanStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVLoanStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column4,
+            this.Column3,
+            this.Column7,
+            this.Column6,
+            this.Column5});
             this.dGVLoanStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGVLoanStatus.Location = new System.Drawing.Point(4, 4);
-            this.dGVLoanStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.dGVLoanStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGVLoanStatus.Name = "dGVLoanStatus";
             this.dGVLoanStatus.ReadOnly = true;
             this.dGVLoanStatus.RowHeadersWidth = 51;
+            this.dGVLoanStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVLoanStatus.Size = new System.Drawing.Size(718, 366);
             this.dGVLoanStatus.TabIndex = 0;
-            this.dGVLoanStatus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dGVLoanStatus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVLoanStatus_CellClick);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cmbStatus);
             this.panel2.Controls.Add(this.txtLoanId);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(730, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(325, 366);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label3
             // 
@@ -222,7 +233,6 @@
             this.label3.Size = new System.Drawing.Size(90, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "Status:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnDashboard
             // 
@@ -231,7 +241,7 @@
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.Black;
             this.btnDashboard.Location = new System.Drawing.Point(103, 106);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(160, 55);
             this.btnDashboard.TabIndex = 56;
@@ -249,7 +259,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 28);
             this.label1.TabIndex = 55;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -262,11 +271,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1059, 164);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tableLayoutPanel1
             // 
@@ -276,7 +284,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 172F));
@@ -288,7 +296,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 554);
             this.tableLayoutPanel1.TabIndex = 57;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -299,13 +306,12 @@
             this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 176);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1059, 374);
             this.tableLayoutPanel2.TabIndex = 1;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // lblLoginTime
             // 
@@ -317,7 +323,69 @@
             this.lblLoginTime.Name = "lblLoginTime";
             this.lblLoginTime.Size = new System.Drawing.Size(0, 28);
             this.lblLoginTime.TabIndex = 56;
-            this.lblLoginTime.Click += new System.EventHandler(this.lblLoginTime_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "LS_Id";
+            this.Column1.HeaderText = "Reference";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 80;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "L_Id";
+            this.Column2.HeaderText = "Loan ID";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 50;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "LS_Status";
+            this.Column4.HeaderText = "Status";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "LS_DisbursementDate";
+            this.Column3.HeaderText = "Disbursement Date";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.DataPropertyName = "LS_Amount";
+            this.Column7.HeaderText = "Amount";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "A_Id";
+            this.Column6.HeaderText = "Account ID";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 60;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "EM_Id";
+            this.Column5.HeaderText = "Handled By";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 80;
             // 
             // EmployeeLoanStatusForm
             // 
@@ -327,6 +395,7 @@
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblLoginTime);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EmployeeLoanStatusForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeLoanStatusForm";
@@ -346,7 +415,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.TextBox txtLoanId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label namelbl;
@@ -364,5 +433,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lblLoginTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

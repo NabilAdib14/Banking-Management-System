@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -78,6 +80,58 @@ namespace BankingManagementSystem
         private void EmployeeSettings1Form_Load(object sender, EventArgs e)
         {
             namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
+
+            try
+            {
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"select * from UserInfo, Employee where U_Id = E_Id and U_Id = {ApplicationHelper.LoggedInId}";
+                DataTable dt = new DataTable();
+                var adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+                txtName.Text = dt.Rows[0]["U_Name"].ToString();
+                txtEmail.Text = dt.Rows[0]["E_Email"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text;
+            string email = txtEmail.Text;
+            try
+            {
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"update UserInfo set U_Name = '{name}' where U_Id = {ApplicationHelper.LoggedInId}";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = $"update Employee set E_Email = '{email}' where E_Id = {ApplicationHelper.LoggedInId}";
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                ApplicationHelper.LoggedInName = name;
+                MessageBox.Show("Profile Updated Successfully!");
+                EmployeeSettings1Form employeeSettings1Form = new EmployeeSettings1Form();
+                employeeSettings1Form.Show();
+                this.Hide();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
