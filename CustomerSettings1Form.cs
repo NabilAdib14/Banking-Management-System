@@ -169,15 +169,25 @@ namespace BankingManagementSystem
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = $"update Customer set C_Address = '{address}', C_Email = '{email}' where C_Id = {ApplicationHelper.LoggedInId}";
                 cmd.ExecuteNonQuery();
-
                 con.Close();
+
+                ApplicationHelper.LoggedInName = name;
                 MessageBox.Show("Profile Updated Successfully!");
+                CustomerSettings1Form customerSettings1Form = new CustomerSettings1Form();
+                customerSettings1Form.Show();
+                this.Hide();
+
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

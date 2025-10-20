@@ -103,7 +103,7 @@ namespace BankingManagementSystem
                 con.Open();
                 var cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = $"SELECT * FROM Account WHERE A_Id = {toA_Id}";
+                cmd.CommandText = $"select * from Account where A_Id = {toA_Id}";
                 DataTable dt = new DataTable();
                 var adp = new SqlDataAdapter(cmd);
                 adp.Fill(dt);
@@ -112,11 +112,11 @@ namespace BankingManagementSystem
                     MessageBox.Show("Invalid Receiver Account.");
                     return;
                 }
-                cmd.CommandText = $"select * FROM Account WHERE A_Id = {ApplicationHelper.LoggedInId}";
+                cmd.CommandText = $"select * from Account where A_Id = {ApplicationHelper.LoggedInId}";
                 DataTable dt1 = new DataTable();
                 var adp1 = new SqlDataAdapter(cmd);
                 adp1.Fill(dt1);
-                double balance = Convert.ToDouble(dt.Rows[0]["A_Balance"].ToString());
+                double balance = Convert.ToDouble(dt1.Rows[0]["A_Balance"].ToString());
                 double amount;
                 if (double.TryParse(txtAmount.Text, out amount))
                 {

@@ -73,6 +73,7 @@
             this.btnConfirm.TabIndex = 55;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -90,6 +91,7 @@
             // 
             // cmbType
             // 
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbType.FormattingEnabled = true;
             this.cmbType.Items.AddRange(new object[] {
@@ -134,8 +136,9 @@
             this.MaximizeBox = false;
             this.Name = "CustomerLoanApplyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CustomerLoanApplyForm";
+            this.Text = "Apply for a Loan";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerLoanApplyForm_FormClosing);
+            this.Load += new System.EventHandler(this.CustomerLoanApplyForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

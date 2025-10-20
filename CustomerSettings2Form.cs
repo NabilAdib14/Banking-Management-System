@@ -132,7 +132,7 @@ namespace BankingManagementSystem
                     return;
                 }
                 string newpwd = txtNewPassword.Text.ToString();
-                cmd.CommandText = $"update UserInfo set U_Password = {newpwd} where U_Id = {ApplicationHelper.LoggedInId}";
+                cmd.CommandText = $"update UserInfo set U_Password = '{newpwd}' where U_Id = {ApplicationHelper.LoggedInId}";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Password Updated Successfully!");
                 txtOldPassword.Clear();

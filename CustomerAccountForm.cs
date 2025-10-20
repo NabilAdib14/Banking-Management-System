@@ -98,26 +98,34 @@ namespace BankingManagementSystem
         private void CustomerAccountForm_Load(object sender, EventArgs e)
         {
             namelbl.Text = $"Welcome, {ApplicationHelper.LoggedInName}";
+            try
+            {
+                string conPath = ApplicationHelper.ConnectionPath;
+                var con = new SqlConnection();
+                con.ConnectionString = conPath;
+                con.Open();
+                var cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"select * from Account, UserInfo where U_Id = {ApplicationHelper.LoggedInId} and A_Id = U_Id ; ";
+                DataTable dt = new DataTable();
+                var adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+                con.Close();
+                string name = dt.Rows[0]["U_Name"].ToString();
+                string accno = dt.Rows[0]["A_Id"].ToString();
+                string cardno = dt.Rows[0]["A_CardNo"].ToString();
+                string balance = dt.Rows[0]["A_Balance"].ToString();
+                lblAccName.Text = name;
+                lblAccNo.Text = $"Account No. {accno}";
+                lblCardNo.Text = cardno;
+                lblBalance.Text = $"Balance: {balance} BDT";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            string conPath = ApplicationHelper.ConnectionPath;
-            var con = new SqlConnection();
-            con.ConnectionString = conPath;
-            con.Open();
-            var cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = $"select * from Account, UserInfo where U_Id = {ApplicationHelper.LoggedInId} and A_Id = U_Id ; ";
-            DataTable dt = new DataTable();
-            var adp = new SqlDataAdapter(cmd);
-            adp.Fill(dt);
-            con.Close();
-            string name = dt.Rows[0]["U_Name"].ToString();
-            string accno = dt.Rows[0]["A_Id"].ToString();
-            string cardno = dt.Rows[0]["A_CardNo"].ToString();
-            string balance = dt.Rows[0]["A_Balance"].ToString();
-            lblAccName.Text = name;
-            lblAccNo.Text = $"Account No. {accno}";
-            lblCardNo.Text = cardno;
-            lblBalance.Text = $"Balance: {balance}";
+            
         }
     }
 }

@@ -44,16 +44,30 @@
             this.btnLoanApply = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlCard = new System.Windows.Forms.Panel();
-            this.lblBalance = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblAccName = new System.Windows.Forms.Label();
             this.btnRepay = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblApprovedDate = new System.Windows.Forms.Label();
+            this.lblLoanStatus = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblAppliedDate = new System.Windows.Forms.Label();
+            this.lblAmount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnViewDetails = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbLoan = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.pnlCard.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // namelbl
@@ -236,7 +250,7 @@
             this.btnLoanApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoanApply.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoanApply.Location = new System.Drawing.Point(195, 5);
-            this.btnLoanApply.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoanApply.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoanApply.Name = "btnLoanApply";
             this.btnLoanApply.Size = new System.Drawing.Size(71, 37);
             this.btnLoanApply.TabIndex = 74;
@@ -258,67 +272,47 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnRepay);
-            this.panel3.Controls.Add(this.pnlCard);
+            this.panel3.Controls.Add(this.tableLayoutPanel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 193);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(794, 254);
             this.panel3.TabIndex = 2;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 385F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.pnlCard, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel4, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 254);
+            this.tableLayoutPanel2.TabIndex = 76;
+            // 
             // pnlCard
             // 
-            this.pnlCard.BackColor = System.Drawing.Color.White;
-            this.pnlCard.Controls.Add(this.lblBalance);
-            this.pnlCard.Controls.Add(this.label3);
-            this.pnlCard.Controls.Add(this.lblAccName);
-            this.pnlCard.Location = new System.Drawing.Point(243, 69);
+            this.pnlCard.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnlCard.Controls.Add(this.btnRepay);
+            this.pnlCard.Controls.Add(this.panel5);
+            this.pnlCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCard.Location = new System.Drawing.Point(388, 3);
             this.pnlCard.Name = "pnlCard";
-            this.pnlCard.Size = new System.Drawing.Size(308, 116);
+            this.pnlCard.Size = new System.Drawing.Size(403, 248);
             this.pnlCard.TabIndex = 74;
-            // 
-            // lblBalance
-            // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.BackColor = System.Drawing.Color.White;
-            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.ForeColor = System.Drawing.Color.Black;
-            this.lblBalance.Location = new System.Drawing.Point(15, 74);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(76, 21);
-            this.lblBalance.TabIndex = 38;
-            this.lblBalance.Text = "Amount:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(13, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 21);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "[n/r/p/a] date:";
-            // 
-            // lblAccName
-            // 
-            this.lblAccName.AutoSize = true;
-            this.lblAccName.BackColor = System.Drawing.Color.White;
-            this.lblAccName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccName.ForeColor = System.Drawing.Color.Black;
-            this.lblAccName.Location = new System.Drawing.Point(13, 11);
-            this.lblAccName.Name = "lblAccName";
-            this.lblAccName.Size = new System.Drawing.Size(263, 32);
-            this.lblAccName.TabIndex = 35;
-            this.lblAccName.Text = "Loan Status: [n/r/p/a]";
+            this.pnlCard.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCard_Paint);
             // 
             // btnRepay
             // 
             this.btnRepay.BackColor = System.Drawing.Color.Gold;
             this.btnRepay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRepay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRepay.Location = new System.Drawing.Point(353, 190);
+            this.btnRepay.Location = new System.Drawing.Point(169, 180);
             this.btnRepay.Margin = new System.Windows.Forms.Padding(2);
             this.btnRepay.Name = "btnRepay";
             this.btnRepay.Size = new System.Drawing.Size(71, 37);
@@ -326,6 +320,168 @@
             this.btnRepay.Text = "Repay";
             this.btnRepay.UseVisualStyleBackColor = false;
             this.btnRepay.Click += new System.EventHandler(this.btnRepay_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.lblApprovedDate);
+            this.panel5.Controls.Add(this.lblLoanStatus);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.lblAppliedDate);
+            this.panel5.Controls.Add(this.lblAmount);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Location = new System.Drawing.Point(53, 43);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(304, 132);
+            this.panel5.TabIndex = 81;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(52, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 25);
+            this.label6.TabIndex = 80;
+            this.label6.Text = "Amount:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(52, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 28);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "Loan Status:";
+            // 
+            // lblApprovedDate
+            // 
+            this.lblApprovedDate.AutoSize = true;
+            this.lblApprovedDate.BackColor = System.Drawing.Color.White;
+            this.lblApprovedDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApprovedDate.ForeColor = System.Drawing.Color.Black;
+            this.lblApprovedDate.Location = new System.Drawing.Point(176, 91);
+            this.lblApprovedDate.Name = "lblApprovedDate";
+            this.lblApprovedDate.Size = new System.Drawing.Size(46, 21);
+            this.lblApprovedDate.TabIndex = 79;
+            this.lblApprovedDate.Text = "Date";
+            // 
+            // lblLoanStatus
+            // 
+            this.lblLoanStatus.AutoSize = true;
+            this.lblLoanStatus.BackColor = System.Drawing.Color.White;
+            this.lblLoanStatus.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoanStatus.ForeColor = System.Drawing.Color.Black;
+            this.lblLoanStatus.Location = new System.Drawing.Point(176, 14);
+            this.lblLoanStatus.Name = "lblLoanStatus";
+            this.lblLoanStatus.Size = new System.Drawing.Size(71, 28);
+            this.lblLoanStatus.TabIndex = 35;
+            this.lblLoanStatus.Text = "Status";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(52, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 21);
+            this.label5.TabIndex = 78;
+            this.label5.Text = "Applied Date:";
+            // 
+            // lblAppliedDate
+            // 
+            this.lblAppliedDate.AutoSize = true;
+            this.lblAppliedDate.BackColor = System.Drawing.Color.White;
+            this.lblAppliedDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppliedDate.ForeColor = System.Drawing.Color.Black;
+            this.lblAppliedDate.Location = new System.Drawing.Point(176, 68);
+            this.lblAppliedDate.Name = "lblAppliedDate";
+            this.lblAppliedDate.Size = new System.Drawing.Size(46, 21);
+            this.lblAppliedDate.TabIndex = 36;
+            this.lblAppliedDate.Text = "Date";
+            // 
+            // lblAmount
+            // 
+            this.lblAmount.AutoSize = true;
+            this.lblAmount.BackColor = System.Drawing.Color.White;
+            this.lblAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.ForeColor = System.Drawing.Color.Black;
+            this.lblAmount.Location = new System.Drawing.Point(176, 42);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(85, 25);
+            this.lblAmount.TabIndex = 38;
+            this.lblAmount.Text = "Amount";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(52, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 21);
+            this.label3.TabIndex = 76;
+            this.label3.Text = "Approved Date:";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnViewDetails);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.cmbLoan);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(381, 250);
+            this.panel4.TabIndex = 75;
+            // 
+            // btnViewDetails
+            // 
+            this.btnViewDetails.BackColor = System.Drawing.Color.Gold;
+            this.btnViewDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewDetails.Location = new System.Drawing.Point(122, 150);
+            this.btnViewDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewDetails.Name = "btnViewDetails";
+            this.btnViewDetails.Size = new System.Drawing.Size(132, 37);
+            this.btnViewDetails.TabIndex = 81;
+            this.btnViewDetails.Text = "View Details";
+            this.btnViewDetails.UseVisualStyleBackColor = false;
+            this.btnViewDetails.Click += new System.EventHandler(this.btnViewDetails_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(22, 61);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(332, 25);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Choose an active loan to view details:";
+            // 
+            // cmbLoan
+            // 
+            this.cmbLoan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLoan.FormattingEnabled = true;
+            this.cmbLoan.Location = new System.Drawing.Point(75, 102);
+            this.cmbLoan.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbLoan.Name = "cmbLoan";
+            this.cmbLoan.Size = new System.Drawing.Size(216, 29);
+            this.cmbLoan.TabIndex = 0;
             // 
             // CustomerLoanForm
             // 
@@ -338,7 +494,7 @@
             this.MaximizeBox = false;
             this.Name = "CustomerLoanForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CustomerLoanForm";
+            this.Text = "My Loan Status";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerLoanForm_FormClosing);
             this.Load += new System.EventHandler(this.CustomerLoanForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -347,8 +503,12 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.pnlCard.ResumeLayout(false);
-            this.pnlCard.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,9 +533,20 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlCard;
-        private System.Windows.Forms.Label lblBalance;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblAccName;
+        private System.Windows.Forms.Label lblAmount;
+        private System.Windows.Forms.Label lblAppliedDate;
+        private System.Windows.Forms.Label lblLoanStatus;
         private System.Windows.Forms.Button btnRepay;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ComboBox cmbLoan;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblApprovedDate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnViewDetails;
+        private System.Windows.Forms.Panel panel5;
     }
 }

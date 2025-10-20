@@ -262,9 +262,9 @@
             this.lblTotalLoan.Location = new System.Drawing.Point(20, 94);
             this.lblTotalLoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalLoan.Name = "lblTotalLoan";
-            this.lblTotalLoan.Size = new System.Drawing.Size(150, 32);
+            this.lblTotalLoan.Size = new System.Drawing.Size(188, 32);
             this.lblTotalLoan.TabIndex = 36;
-            this.lblTotalLoan.Text = "Total Loans:";
+            this.lblTotalLoan.Text = "Pending Loans:";
             // 
             // lblTotalCustomer
             // 

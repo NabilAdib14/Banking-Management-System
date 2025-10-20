@@ -18,17 +18,7 @@ namespace BankingManagementSystem
         {
             InitializeComponent();
 
-            // Parse the login time from string
-            //DateTime loginDate = DateTime.Parse(loginTime);
-
-            // Calculate validity = login time + 2 years
-            //DateTime validityDate = loginDate.AddYears(2);
-
-            // Show login time
-            //lblLoginTime.Text = "Logged in at: " + loginDate.ToString("dd MMM yyyy, hh:mm tt");
-
-            // Show validity in Month + Year (e.g., "Valid until: Sep 2027")
-            //lblValidity.Text = "Valid until: " + validityDate.ToString("MMMM yyyy");
+          
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -147,6 +137,11 @@ namespace BankingManagementSystem
                 loginForm.Show();
                 this.Hide();
             }
+        }
+
+        private void lblCardno_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

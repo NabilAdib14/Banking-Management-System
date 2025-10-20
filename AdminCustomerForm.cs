@@ -90,7 +90,7 @@ namespace BankingManagementSystem
                 con.Open();
                 var cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = $"select * from UserInfo, Customer where U_Id = C_Id";
+                cmd.CommandText = $"select * from UserInfo, Customer where U_Id = C_Id and C_Active = 1";
                 DataTable dt = new DataTable();
                 var adp = new SqlDataAdapter(cmd);
                 adp.Fill(dt);
@@ -118,6 +118,7 @@ namespace BankingManagementSystem
             dGVCustomer.ClearSelection();
             dtp_DOB.Value = DateTime.Now;
             dtp_DOB.Enabled = true;
+            txtPass.ReadOnly = false;
 
 
         }
@@ -141,6 +142,7 @@ namespace BankingManagementSystem
             txtAddress.Text = dGVCustomer.Rows[e.RowIndex].Cells[4].Value.ToString();
             dtp_DOB.Value = Convert.ToDateTime(dGVCustomer.Rows[e.RowIndex].Cells[6].Value.ToString());
             dtp_DOB.Enabled = false;
+            txtPass.ReadOnly = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -150,7 +152,7 @@ namespace BankingManagementSystem
                 MessageBox.Show("No data selected to delete");
                 return;
             }
-            DialogResult dr = MessageBox.Show("Do you want to delete?", "Logout", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Do you want to delete?", "Delete", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 try
@@ -162,13 +164,9 @@ namespace BankingManagementSystem
                     con.Open();
                     var cmd = new SqlCommand();
                     cmd.Connection = con;
-                    cmd.CommandText = $"delete from Account where A_Id = {id}";
+                    cmd.CommandText = $"update Customer set C_Active = 0 where C_Id = {id}";
                     cmd.ExecuteNonQuery();
-                    cmd.CommandText = $"delete from Customer where C_Id = {id}";
-                    cmd.ExecuteNonQuery();
-                    cmd.CommandText = $"delete from UserInfo where U_Id = {id}";
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Customer Information Deleted SUccessfully");
+                    MessageBox.Show("Customer Information Deleted Successfully");
                     this.LoadData();
                     this.NewData();
                 }
@@ -184,26 +182,28 @@ namespace BankingManagementSystem
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "" || txtPass.Text == "" || txtEmail.Text == "" || txtAddress.Text == ""){
+            string name = txtName.Text.ToString();
+            string pwd = txtPass.Text.ToString();
+            string mail = txtEmail.Text.ToString();
+            string address = txtAddress.Text.ToString();
+            DateTime dob = dtp_DOB.Value;
+            DateTime openingDate = DateTime.Now;
+            DateTime validTill = openingDate.AddYears(5);
+            int U_Id = 0;
+           
+            if (string.IsNullOrEmpty(name)|| string.IsNullOrEmpty(pwd)|| string.IsNullOrEmpty(mail)|| string.IsNullOrEmpty(address))
+            {
                 MessageBox.Show("Insert all the required details");
                 return;
             }
-            if(txtId.Text == "Auto Generated")
+            try
+            { 
+            string conPath = ApplicationHelper.ConnectionPath;
+            var con = new SqlConnection();
+            con.ConnectionString = conPath;
+            con.Open();
+            if (txtId.Text == "Auto Generated")
             {
-                string name = txtName.Text.ToString();
-                string pwd = txtPass.Text.ToString();
-                string mail = txtEmail.Text.ToString();
-                string address = txtAddress.Text.ToString();
-                DateTime dob = dtp_DOB.Value;
-                DateTime openingDate = DateTime.Now;
-                DateTime validTill = openingDate.AddYears(5);
-                int U_Id = 0;
-                try
-                {
-                    string conPath = ApplicationHelper.ConnectionPath;
-                    var con = new SqlConnection();
-                    con.ConnectionString = conPath;
-                    con.Open();
                     var cmd1 = new SqlCommand();
                     cmd1.Connection = con;
                     cmd1.CommandText = $"INSERT INTO UserInfo (U_Name, U_Password, U_Role) OUTPUT INSERTED.U_ID VALUES ('{name}', '{pwd}', 'Customer')";
@@ -217,27 +217,13 @@ namespace BankingManagementSystem
                     cmd3.CommandText = $"INSERT INTO Account (A_ID, A_OpeningDate, A_Validity) VALUES ({U_Id}, '{openingDate:yyyy-MM-dd}', '{validTill:yyyy-MM-dd}')";
                     cmd3.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show($"The new User ID is: {U_Id}\n Password is: {pwd}", "New Customer Details Entered Successfully", MessageBoxButtons.OK);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                    MessageBox.Show($"The new User ID is: {U_Id}\nPassword is: {pwd}", "New Customer Details Entered Successfully", MessageBoxButtons.OK);
+                
             }
             else
             {
                 int id = Convert.ToInt32(txtId.Text.ToString());
-                string name = txtName.Text.ToString();
-                string pwd = txtPass.Text.ToString();
-                string mail = txtEmail.Text.ToString();
-                string address = txtAddress.Text.ToString();
-
-                try
-                {
-                    string conPath = ApplicationHelper.ConnectionPath;
-                    var con = new SqlConnection();
-                    con.ConnectionString = conPath;
-                    con.Open();
+               
                     var cmd = new SqlCommand();
                     cmd.Connection = con;
                     cmd.CommandText = $"update UserInfo set U_Name = '{name}', U_Password = '{pwd}' where U_Id = {id}";
@@ -246,11 +232,13 @@ namespace BankingManagementSystem
                     cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Profile Updated Successfully!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                
+            }
+            con.Close ();
+            }
+            catch (Exception ex)
+            { 
+                MessageBox.Show(ex.Message);
             }
             this.NewData();
             this.LoadData();

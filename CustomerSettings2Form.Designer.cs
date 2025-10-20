@@ -66,10 +66,10 @@
             this.btnUpdateProfile.BackColor = System.Drawing.Color.Gold;
             this.btnUpdateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateProfile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateProfile.Location = new System.Drawing.Point(168, 126);
-            this.btnUpdateProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(74, 96);
+            this.btnUpdateProfile.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(249, 50);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(187, 41);
             this.btnUpdateProfile.TabIndex = 82;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = false;
@@ -80,10 +80,9 @@
             this.panel3.Controls.Add(this.btnChangePassword);
             this.panel3.Controls.Add(this.btnUpdateProfile);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(4, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(584, 366);
+            this.panel3.Size = new System.Drawing.Size(344, 298);
             this.panel3.TabIndex = 0;
             // 
             // btnChangePassword
@@ -91,10 +90,10 @@
             this.btnChangePassword.BackColor = System.Drawing.Color.Gold;
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePassword.Location = new System.Drawing.Point(168, 192);
-            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChangePassword.Location = new System.Drawing.Point(74, 150);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(249, 50);
+            this.btnChangePassword.Size = new System.Drawing.Size(187, 41);
             this.btnChangePassword.TabIndex = 83;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = false;
@@ -104,16 +103,15 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 467F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
             this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel4, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1059, 374);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 304);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel4
@@ -121,10 +119,9 @@
             this.panel4.Controls.Add(this.panelUpdateProfile);
             this.panel4.Controls.Add(this.btnSubmit);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(596, 4);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(353, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(459, 366);
+            this.panel4.Size = new System.Drawing.Size(438, 298);
             this.panel4.TabIndex = 1;
             // 
             // panelUpdateProfile
@@ -134,19 +131,19 @@
             this.panelUpdateProfile.Controls.Add(this.txtOldPassword);
             this.panelUpdateProfile.Controls.Add(this.lblNewPassword);
             this.panelUpdateProfile.Controls.Add(this.lblOldPassword);
-            this.panelUpdateProfile.Location = new System.Drawing.Point(16, 91);
-            this.panelUpdateProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelUpdateProfile.Location = new System.Drawing.Point(56, 92);
+            this.panelUpdateProfile.Margin = new System.Windows.Forms.Padding(2);
             this.panelUpdateProfile.Name = "panelUpdateProfile";
-            this.panelUpdateProfile.Size = new System.Drawing.Size(428, 129);
+            this.panelUpdateProfile.Size = new System.Drawing.Size(321, 105);
             this.panelUpdateProfile.TabIndex = 96;
             // 
             // txtNewPassword
             // 
             this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.Location = new System.Drawing.Point(195, 68);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNewPassword.Location = new System.Drawing.Point(146, 55);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(208, 34);
+            this.txtNewPassword.Size = new System.Drawing.Size(157, 29);
             this.txtNewPassword.TabIndex = 7;
             this.txtNewPassword.UseSystemPasswordChar = true;
             this.txtNewPassword.MouseEnter += new System.EventHandler(this.txtBox_MouseEnter);
@@ -156,10 +153,10 @@
             // txtOldPassword
             // 
             this.txtOldPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOldPassword.Location = new System.Drawing.Point(195, 23);
-            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtOldPassword.Location = new System.Drawing.Point(146, 19);
+            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtOldPassword.Name = "txtOldPassword";
-            this.txtOldPassword.Size = new System.Drawing.Size(208, 34);
+            this.txtOldPassword.Size = new System.Drawing.Size(157, 29);
             this.txtOldPassword.TabIndex = 6;
             this.txtOldPassword.UseSystemPasswordChar = true;
             this.txtOldPassword.MouseEnter += new System.EventHandler(this.txtBox_MouseEnter);
@@ -170,9 +167,10 @@
             // 
             this.lblNewPassword.AutoSize = true;
             this.lblNewPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewPassword.Location = new System.Drawing.Point(31, 68);
+            this.lblNewPassword.Location = new System.Drawing.Point(23, 55);
+            this.lblNewPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(155, 28);
+            this.lblNewPassword.Size = new System.Drawing.Size(125, 21);
             this.lblNewPassword.TabIndex = 5;
             this.lblNewPassword.Text = "New Password:";
             // 
@@ -180,9 +178,10 @@
             // 
             this.lblOldPassword.AutoSize = true;
             this.lblOldPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOldPassword.Location = new System.Drawing.Point(3, 29);
+            this.lblOldPassword.Location = new System.Drawing.Point(2, 24);
+            this.lblOldPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOldPassword.Name = "lblOldPassword";
-            this.lblOldPassword.Size = new System.Drawing.Size(183, 28);
+            this.lblOldPassword.Size = new System.Drawing.Size(147, 21);
             this.lblOldPassword.TabIndex = 4;
             this.lblOldPassword.Text = "Current Password:";
             // 
@@ -191,10 +190,10 @@
             this.btnSubmit.BackColor = System.Drawing.Color.Gold;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(188, 225);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmit.Location = new System.Drawing.Point(185, 201);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(109, 50);
+            this.btnSubmit.Size = new System.Drawing.Size(82, 41);
             this.btnSubmit.TabIndex = 97;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -205,20 +204,18 @@
             this.lblLoginTime.AutoSize = true;
             this.lblLoginTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginTime.ForeColor = System.Drawing.Color.White;
-            this.lblLoginTime.Location = new System.Drawing.Point(675, 0);
-            this.lblLoginTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLoginTime.Location = new System.Drawing.Point(506, 0);
             this.lblLoginTime.Name = "lblLoginTime";
-            this.lblLoginTime.Size = new System.Drawing.Size(0, 28);
+            this.lblLoginTime.Size = new System.Drawing.Size(0, 21);
             this.lblLoginTime.TabIndex = 68;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.tableLayoutPanel2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(4, 176);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(3, 143);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1059, 374);
+            this.panel2.Size = new System.Drawing.Size(794, 304);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -229,15 +226,14 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 172F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 140F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 554);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 69;
             // 
             // panel1
@@ -252,10 +248,9 @@
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1059, 164);
+            this.panel1.Size = new System.Drawing.Size(794, 134);
             this.panel1.TabIndex = 0;
             // 
             // namelbl
@@ -264,10 +259,9 @@
             this.namelbl.BackColor = System.Drawing.Color.RoyalBlue;
             this.namelbl.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.namelbl.ForeColor = System.Drawing.Color.White;
-            this.namelbl.Location = new System.Drawing.Point(53, 22);
-            this.namelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.namelbl.Location = new System.Drawing.Point(40, 18);
             this.namelbl.Name = "namelbl";
-            this.namelbl.Size = new System.Drawing.Size(339, 46);
+            this.namelbl.Size = new System.Drawing.Size(274, 37);
             this.namelbl.TabIndex = 56;
             this.namelbl.Text = "Welcome, Customer";
             // 
@@ -277,10 +271,9 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Location = new System.Drawing.Point(879, 87);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Location = new System.Drawing.Point(659, 71);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(128, 55);
+            this.btnLogout.Size = new System.Drawing.Size(96, 45);
             this.btnLogout.TabIndex = 63;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -292,10 +285,9 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
-            this.btnSettings.Location = new System.Drawing.Point(743, 87);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSettings.Location = new System.Drawing.Point(557, 71);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(128, 55);
+            this.btnSettings.Size = new System.Drawing.Size(96, 45);
             this.btnSettings.TabIndex = 1;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
@@ -307,10 +299,9 @@
             this.btnLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoan.ForeColor = System.Drawing.Color.Black;
-            this.btnLoan.Location = new System.Drawing.Point(607, 87);
-            this.btnLoan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoan.Location = new System.Drawing.Point(455, 71);
             this.btnLoan.Name = "btnLoan";
-            this.btnLoan.Size = new System.Drawing.Size(128, 55);
+            this.btnLoan.Size = new System.Drawing.Size(96, 45);
             this.btnLoan.TabIndex = 61;
             this.btnLoan.Text = "Loan";
             this.btnLoan.UseVisualStyleBackColor = false;
@@ -322,10 +313,9 @@
             this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransfer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransfer.ForeColor = System.Drawing.Color.Black;
-            this.btnTransfer.Location = new System.Drawing.Point(471, 87);
-            this.btnTransfer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTransfer.Location = new System.Drawing.Point(353, 71);
             this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(128, 55);
+            this.btnTransfer.Size = new System.Drawing.Size(96, 45);
             this.btnTransfer.TabIndex = 60;
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = false;
@@ -337,10 +327,9 @@
             this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistory.ForeColor = System.Drawing.Color.Black;
-            this.btnHistory.Location = new System.Drawing.Point(335, 87);
-            this.btnHistory.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHistory.Location = new System.Drawing.Point(251, 71);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(128, 55);
+            this.btnHistory.Size = new System.Drawing.Size(96, 45);
             this.btnHistory.TabIndex = 59;
             this.btnHistory.Text = "History";
             this.btnHistory.UseVisualStyleBackColor = false;
@@ -352,10 +341,9 @@
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.Color.Black;
-            this.btnAccount.Location = new System.Drawing.Point(199, 87);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAccount.Location = new System.Drawing.Point(149, 71);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(128, 55);
+            this.btnAccount.Size = new System.Drawing.Size(96, 45);
             this.btnAccount.TabIndex = 58;
             this.btnAccount.Text = "Account";
             this.btnAccount.UseVisualStyleBackColor = false;
@@ -367,10 +355,9 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
-            this.btnHome.Location = new System.Drawing.Point(63, 87);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHome.Location = new System.Drawing.Point(47, 71);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(128, 55);
+            this.btnHome.Size = new System.Drawing.Size(96, 45);
             this.btnHome.TabIndex = 57;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -381,21 +368,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(687, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(515, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 28);
+            this.label1.Size = new System.Drawing.Size(0, 21);
             this.label1.TabIndex = 55;
             // 
             // CustomerSettings2Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblLoginTime);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "CustomerSettings2Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

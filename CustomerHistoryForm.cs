@@ -92,7 +92,7 @@ namespace BankingManagementSystem
                 con.Open();
                 var cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = $"select * from TransactionInfo where From_A_Id = {ApplicationHelper.LoggedInId} or To_A_Id = {ApplicationHelper.LoggedInId}";
+                cmd.CommandText = $"select * from TransactionInfo where From_A_Id = {ApplicationHelper.LoggedInId} or To_A_Id = {ApplicationHelper.LoggedInId} order by t_date desc, t_id desc";
                 DataTable dt = new DataTable();
                 var adp = new SqlDataAdapter(cmd);
                 adp.Fill(dt);
@@ -108,11 +108,6 @@ namespace BankingManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void dGVHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }

@@ -49,48 +49,56 @@ namespace BankingManagementSystem
                 MessageBox.Show("Please select a withdrawal method.");
                 return;
             }
-            try
-            {
-                string conPath = ApplicationHelper.ConnectionPath;
-                var con = new SqlConnection();
-                con.ConnectionString = conPath;
-                con.Open();
-                var cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = $"select A_Balance from Account where A_id = {ApplicationHelper.LoggedInId}"; 
-                DataTable dt = new DataTable();
-                var adp = new SqlDataAdapter(cmd);
-                adp.Fill(dt);
 
-                double balance = Convert.ToDouble(dt.Rows[0]["A_Balance"].ToString());
-                double amount;
-                if (double.TryParse(txtAmount.Text, out amount))
+            double amount;
+            if (double.TryParse(txtAmount.Text, out amount))
+            {
+                if (amount <= 0)
                 {
-                    if (amount <= 0 )
-                    {
-                        MessageBox.Show("Amount must be greater than 0.");
-                        return;
-                    }
+                    MessageBox.Show("Amount must be greater than 0.");
+                    return;
+                }
+
+                try
+                {
+                    string conPath = ApplicationHelper.ConnectionPath;
+                    var con = new SqlConnection(conPath);
+                    con.Open();
+
+                    var cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    cmd.CommandText = $"select A_Balance from Account where A_Id = {ApplicationHelper.LoggedInId}";
+
+                    DataTable dt = new DataTable();
+                    var adp = new SqlDataAdapter(cmd);
+                    adp.Fill(dt);
+
+                    double balance = Convert.ToDouble(dt.Rows[0]["A_Balance"].ToString());
                     if (amount > balance)
                     {
                         MessageBox.Show("Amount must be less than available balance.");
                         return;
                     }
-                    cmd.CommandText = $"update Account set A_Balance = A_Balance -{amount} where A_Id = {ApplicationHelper.LoggedInId}";
+                    cmd.CommandText = $"update Account set A_Balance = A_Balance - {amount} where A_Id = {ApplicationHelper.LoggedInId}";
                     cmd.ExecuteNonQuery();
                     cmd.CommandText = $"insert into TransactionInfo (T_Amount,T_Type,T_Date,From_A_Id,T_Method) values ({amount},'Withdraw','{DateTime.Now}',{ApplicationHelper.LoggedInId},'{cmbMethod.SelectedItem.ToString()}')";
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show($"{amount}Tk withdrawn successfully!");
+
+                    MessageBox.Show($"{amount} Tk withdrawn successfully!");
                     isProgrammaticClose = true;
                     CustomerAccountForm customerAccountForm = new CustomerAccountForm();
                     customerAccountForm.Show();
                     this.Close();
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex) 
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please enter a valid amount.");
             }
         }
     }
